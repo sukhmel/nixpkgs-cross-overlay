@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     rust-overlay = {
-      url = "github:oxalica/rust-overlay";
+      url = "github:nihirash/rust-overlay";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };
