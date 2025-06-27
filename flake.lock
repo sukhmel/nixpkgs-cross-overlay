@@ -49,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748917909,
-        "narHash": "sha256-4hBm/7t5mkltRfiaT/qZWL62kJI89f1mNjrJY6mPiNc=",
+        "lastModified": 1750991591,
+        "narHash": "sha256-X2x4rZKcQ8mUAfw+QH6i59z4IcucoVREg9U9IKhLqYE=",
         "owner": "nihirash",
         "repo": "rust-overlay",
-        "rev": "77c5ca0a8fbbf200f70690cb900cffe420b24bed",
+        "rev": "4e6646f6ad63ca51277feb983d1bee8855b860e6",
         "type": "github"
       },
       "original": {
