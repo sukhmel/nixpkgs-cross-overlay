@@ -9,7 +9,7 @@ rustPlatform.buildRustPackage rec {
     sha256 = "sha256-XLfa40eMkeUL544gDqZYbly2E5Mrogn7v24D8u/wjkg=";
   };
 
-  cargoHash = "sha256-orWs8KYFUtMp5vbwhr3O13FGXjXXKZ6Idp+ZS538P+Y=";
+  cargoHash = "sha256-h7WOslRfu7cQ/af/b6C8gN2QrEt2SLxNnGeEv6bKj3E=";
 
   meta = with lib; {
     description = "A linker proxy tool";

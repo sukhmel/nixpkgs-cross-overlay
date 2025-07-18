@@ -5,6 +5,7 @@ in
 { localSystem ? builtins.currentSystem
 , crossSystem ? null
 , src ? lockFile.nixpkgs
+, newSrc ? lockFile.nixpkgs-25-05
 , config ? { }
 , overlays ? [ ]
 }:
@@ -15,13 +16,19 @@ let
 
     overlays = [
       # Setup cross overlay.
+      (final: prev: {
+        # get fresh rdkafka
+        rdkafka = import newSrc {
+          inherit localSystem config;
+        }.rdkafka;
+      })
       (import ./..)
     ];
   };
 in
 # Make cross system packages.
 pkgs.mkCrossPkgs {
-  inherit src localSystem crossSystem config;
+  inherit src newSrc localSystem crossSystem config;
   # Setup extra overlays.
   overlays = [
     (import lockFile.rust-overlay)

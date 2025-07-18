@@ -4,6 +4,7 @@ final: prev: {
   # deprecated: use `nixpgs` directly.
   mkCrossPkgs =
     { src
+    , newSrc ? null
     , localSystem
     , crossSystem ? null
     , config ? { }
@@ -12,9 +13,18 @@ final: prev: {
 
     let
       crossOverlay = import ./.;
+      rdkafkaOverlay = (final: prev: {
+        # get fresh rdkafka
+        rdkafka =
+          if newSrc != null
+          then (import newSrc {
+            inherit localSystem crossSystem config;
+          }).rdkafka
+          else final.rdkafka;
+      });
     in
     import src {
       inherit localSystem crossSystem config;
-      overlays = [ crossOverlay ] ++ overlays;
+      overlays = [ crossOverlay rdkafkaOverlay ] ++ overlays;
     };
 } // (import ./lib final prev)
