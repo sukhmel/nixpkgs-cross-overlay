@@ -20,7 +20,7 @@ final: prev: {
           then (import newSrc {
             inherit localSystem crossSystem config;
           }).rdkafka
-          else final.rdkafka;
+          else prev.rdkafka;
       });
     in
     import src {
