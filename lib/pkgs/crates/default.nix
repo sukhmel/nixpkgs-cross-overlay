@@ -15,7 +15,7 @@ let
     rocksdb-sys = prev.callPackage ./rocksdb-sys.nix { };
     zstd-sys = prev.callPackage ./zstd-sys.nix { };
     openssl-sys = prev.callPackage ./openssl-sys.nix { };
-    sasl2-sys = prev.callPackage ./sals2-sys.nix { };
+    sasl2-sys = prev.callPackage ./sasl2-sys.nix { };
     # Popular crates depends on the protoc compiler
     prost = protobuf;
     tonic = protobuf;
