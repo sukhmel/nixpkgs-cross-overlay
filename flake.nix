@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-25-05.url = "github:NixOS/nixpkgs/nixos-25.05";
     rust-overlay = {
       url = "github:nihirash/rust-overlay";
       inputs = {
@@ -20,7 +19,6 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-25-05
     , rust-overlay
     , flake-utils
     , treefmt-nix
@@ -34,12 +32,6 @@
           overlays = [
             (import rust-overlay)
             (import ./.)
-            (final: prev: {
-              # get fresh rdkafka
-              rdkafka = builtins.trace ''overlaying rdkafka'' import nixpkgs-25-05 {
-                inherit system;
-              }.rdkafka;
-            })
           ];
         };
 

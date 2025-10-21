@@ -72,9 +72,19 @@ in
     if isStatic then compat-static else compat-dynamic;
 
   # Cmake-built Kafka works better than the origin one.
-  rdkafka = prev.rdkafka.overrideAttrs (now: old: {
+  rdkafka = let
+    version = "2.12.0";
+  in
+    prev.rdkafka.overrideAttrs (now: old: {
     nativeBuildInputs = old.nativeBuildInputs ++ [ prev.pkgsBuildHost.cmake ];
     buildInputs = old.buildInputs ++ [ final.lz4 final.openssl.dev ];
+    version = version;
+    src = prev.fetchFromGitHub {
+      owner = "confluentinc";
+      repo = "librdkafka";
+      tag = "v${version}";
+      sha256 = "sha256-vL1kSn9I9vcDWLXRgLI5PaEwgpowBtSS/oqQZAU6wJ0=";
+    };
     cmakeFlags = [
       "-DRDKAFKA_BUILD_TESTS=0"
       "-DRDKAFKA_BUILD_EXAMPLES=0"

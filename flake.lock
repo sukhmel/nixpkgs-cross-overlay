@@ -34,27 +34,10 @@
         "type": "github"
       }
     },
-    "nixpkgs-25-05": {
-      "locked": {
-        "lastModified": 1758589230,
-        "narHash": "sha256-zMTCFGe8aVGTEr2RqUi/QzC1nOIQ0N1HRsbqB4f646k=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d1d883129b193f0b495d75c148c2c3a7d95789a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-25.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-25-05": "nixpkgs-25-05",
         "rust-overlay": "rust-overlay",
         "treefmt-nix": "treefmt-nix"
       }
@@ -66,11 +49,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758767260,
-        "narHash": "sha256-UcDqGnIei+s1Gh6x0ugfB/G1Z1RxQ4p1P7v8fKnCo2Q=",
+        "lastModified": 1761013754,
+        "narHash": "sha256-XKugAQ+QEvuZlkbTrbSYQ6wsjjoAljQDgNW7G2JuKb0=",
         "owner": "nihirash",
         "repo": "rust-overlay",
-        "rev": "6e72a0ef9847eeed99e00bcdbe089a5dfc8a9f23",
+        "rev": "603aacccce80db9cd6acb7a38060e99806ae9367",
         "type": "github"
       },
       "original": {
@@ -101,11 +84,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758728421,
-        "narHash": "sha256-ySNJ008muQAds2JemiyrWYbwbG+V7S5wg3ZVKGHSFu8=",
+        "lastModified": 1760945191,
+        "narHash": "sha256-ZRVs8UqikBa4Ki3X4KCnMBtBW0ux1DaT35tgsnB1jM4=",
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "rev": "5eda4ee8121f97b218f7cc73f5172098d458f1d1",
+        "rev": "f56b1934f5f8fcab8deb5d38d42fd692632b47c2",
         "type": "github"
       },
       "original": {
